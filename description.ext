@@ -1,0 +1,63 @@
+﻿//Loading Screen
+loadScreen="BiA.jpg";
+onLoadName = "BiA - CTI";
+onLoadMission = "Enjoy cooperating with burgers";
+author = "Arkani";
+
+//Respawn
+respawn = 3;
+respawndelay = 3;
+respawnButton = 1;
+respawnOnStart = 1;
+respawnDialog = 0;
+respawnTemplates[] = { "MenuInventory", "MenuPosition" };
+
+//Mission Info
+class Header 
+{
+	gameType =  Coop;
+	minPlayers =  1;
+	maxPlayers = 3;
+};
+
+//Stuff
+reviveMode = 0;
+disabledAI = true;
+enableDebugConsole = 1;
+allowFunctionsLog = 0;
+joinUnassigned = 1;
+
+//Garbage Collector
+corpseManagerMode = 1; //all units monitored
+wreckManagerMode = 1; //all vehicles monitored
+minPlayerDistance = 50;
+
+corpseLimit = 5;
+wreckLimit = 1;
+
+corpseRemovalMinTime = 60;
+corpseRemovalMaxTime = 600;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 1200;
+
+//use cba setting file
+cba_settings_hasSettingsFile = 1;
+
+//Vehicle Randomization
+disableRandomization[] =
+{
+	"AllVehicles"		// No randomization at all
+	/*
+	"Air",				// No randomization at all for air vehicles
+	"land",				// No randomization at all for land vehicles
+	"Ship",				// No randomization at all for sea vehicles
+	"air_f",				// There won't be any randomization on every air vehicles
+	"C_Hatchback_01_F",		// No random on Hatchbacks
+	"truck_withoutRandom"	// No random for this given vehicle
+	*/
+};
+
+//Includes
+#include "scripts\respawn\respawn_roles.sqf"
+#include "scripts\respawn\respawn_classes.sqf"
+#include "scripts\equipment\classKits.sqf"

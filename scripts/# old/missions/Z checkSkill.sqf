@@ -1,0 +1,10 @@
+[test skillFinal "aimingAccuracy", 
+test skillFinal "aimingShake", 
+test skillFinal "aimingSpeed", 
+test skillFinal "endurance", 
+test skillFinal "spotDistance", 
+test skillFinal "spotTime", 
+test skillFinal "courage", 
+test skillFinal "reloadSpeed", 
+test skillFinal "commanding", 
+test skillFinal "general"]

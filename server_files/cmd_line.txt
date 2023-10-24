@@ -1,0 +1,33 @@
+//reality 
+-ip=203.23.178.6 
+-port=2662 
+-bepath="E:\TCAFiles\Users\manuelb\62088\profile\BattlEye" 
+-noPause 
+-noSound 
+-cpuCount=4 
+-maxMem=8192 
+-exThreads=7 
+-loadMissionToMemory 
+-autoInit 
+-filePatching
+-cfg=config.cfg 
+-config=server.cfg 
+"-profiles=profile" 
+"-mod=@ace;@ace_add;@Achilles;@CBA_A3;@Dagger;@DevTools;@DUI;@GOLD_Optics;@Improvement;@JSRS SOUNDMOD;@JSRS_Adds;@LAMBS;@Project OPFOR;@RHSAFRF;@RHSGREF;@RHSSAF;@RHSUSAF;@RKSL;@SMA;@SmallEquipMods;@Vcom;@VSM All-In-One Collection;@ZZ_BiA" 
+
+// theory 
+-ip=203.23.178.6 
+-port=2662 
+-bepath="E:\TCAFiles\Users\manuelb\62088\profile\BattlEye" 
+-noPause 
+-noSound 
+-cpuCount=4 
+-maxMem=8192 
+-exThreads=7 
+-cfg=basic.cfg 
+-config=server.cfg 
+-loadMissionToMemory 
+-profiles="profile\Users\TCAGame"
+-autoInit 
+-filePatching 
+"-mod=@JSRS SOUNDMOD;@Project OPFOR;@VSM All-In-One Collection;@RHSSAF;@RHSGREF;@RHSAFRF;@RHSUSAF;@GOLD_Optics;" 
