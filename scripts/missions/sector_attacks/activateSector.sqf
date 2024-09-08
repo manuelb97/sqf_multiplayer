@@ -82,7 +82,7 @@ _sectorInfo = format
 	"Sector (%1): %2, Num Enemies: %3, Num Vehicles: %4, Num Reinforcements: %5", 
 	_marker, _tier, _maxEnemies, _defVehNum, _numReinforcements
 ];
-[_sectorTag, _sectorInfo, _debug] spawn bia_to_log;
+[_sectorTag, _sectorInfo] spawn bia_to_log;
 
 //mark as active 
 _actiMarker = "Temp_Activated" + "_" + _marker;
@@ -106,7 +106,7 @@ while {!(scriptDone _enemiesPrepared)} do
 {
 	uiSleep 1;
 };
-[_sectorTag, format["Marker %1: Enemies prepared", _marker], _debug] spawn bia_to_log;
+[_sectorTag, format["Marker %1: Enemies prepared", _marker]] spawn bia_to_log;
 
 //wait for sector to deactivate
 _cleared = false; // set variable can take longer than 1 sec to be set for all 
@@ -149,7 +149,7 @@ while {_sectorActive && !_cleared} do
 		_clearedPosArr = ["ClearedPosArr",[]] call bia_load_from_profile;
 		_clearedPosArr pushBack (getMarkerPos _marker);
 		["ClearedPosArr", _clearedPosArr] call bia_save_to_profile;
-		[_sectorTag, "Saved newly cleared Sector", _debug] spawn bia_to_log;
+		[_sectorTag, "Saved newly cleared Sector"] spawn bia_to_log;
 
 		["Sector captured", "center_top", 5, 0, 0, 85, "Green"] remoteExec ["bia_spawn_text", 0];
 	};
@@ -157,7 +157,7 @@ while {_sectorActive && !_cleared} do
 	//mobilize enemies when very few left 
 	if (count _sectorOpfor <= 5 && serverTime > _sectorReactTime && !_lastEffort) then 
 	{
-		[_sectorTag, "Mobilizing last remaining defenders", _debug] spawn bia_to_log;
+		[_sectorTag, "Mobilizing last remaining defenders"] spawn bia_to_log;
 		_lastEffort = true;
 
 		//_minDist = [getMarkerPos _marker, allPlayers] call bia_closest_dist;
@@ -166,7 +166,7 @@ while {_sectorActive && !_cleared} do
 
 		if (!isNull _targetPlayer) then 
 		{
-			[_sectorTag, "Target player found for remaining defenders", _debug] spawn bia_to_log;
+			[_sectorTag, "Target player found for remaining defenders"] spawn bia_to_log;
 
 			_allGrps = _sectorOpfor apply {group _x};
 			_grps = _allGrps arrayIntersect _allGrps;
@@ -217,7 +217,7 @@ while {_sectorActive && !_cleared} do
 		&& (_currTotalEnemies + _numSuppEnemies) <= _maxTotalEnemies
 	) then 
 	{
-		[_sectorTag, format["Marker %1 calling for support", _marker], _debug] spawn bia_to_log;
+		[_sectorTag, format["Marker %1 calling for support", _marker]] spawn bia_to_log;
 		["Enemy Reinforcements spotted", "center_top", 5, 0, 0, 85, "Red"] remoteExecCall ["bia_spawn_text", 0];
 
 		//_supportCalled = true;
@@ -252,7 +252,7 @@ while {_sectorActive && !_cleared} do
 		if (_marker != _closestMarker || count _playerArr < 1) then 
 		{
 			missionNamespace setVariable [format["%1_active", _marker], false, true];
-			[_sectorTag, format["Deactivated sector (%1): too many active Enemies + not closest Sector", _marker], _debug] spawn bia_to_log;
+			[_sectorTag, format["Deactivated sector (%1): too many active Enemies + not closest Sector", _marker]] spawn bia_to_log;
 		};
 	};
 

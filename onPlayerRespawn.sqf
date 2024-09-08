@@ -25,6 +25,10 @@ switch (missionNamespace getVariable ["Mission", ""]) do
 	{
 		[player] spawn bia_sector_attacks_resp_load;
 	};
+	case "training": 
+	{
+		[player] spawn bia_training_resp_load;
+	};
 };
 
 //Set pos and orientation

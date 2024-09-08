@@ -1,8 +1,4 @@
 //Paras
-params [
-"_debug"
-];
-
 _host = objNull;
 _oldHost = objNull;
 
@@ -13,7 +9,7 @@ while {true} do
 	if (count _players > 0) then 
 	{
 		{
-			[_x, _debug] remoteExec ["bia_check_fps", _x];
+			[_x] remoteExec ["bia_check_fps", _x];
 		} forEach _players;
 
 		_fpsVals = _players apply { missionNamespace getVariable [format["%1_fps", _x], 0] };
@@ -30,7 +26,7 @@ while {true} do
 
 			if (_host != _oldHost) then 
 			{
-				["HostSelector", format["Current Host: %1", _host], _debug] spawn bia_to_log;
+				["HostSelector", format["Current Host: %1", _host]] spawn bia_to_log;
 			};
 		};
 

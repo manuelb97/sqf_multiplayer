@@ -34,7 +34,7 @@ killedManInfo =
 		_distance = round(_victim distance _killerName);
 		_killerName addPlayerScores [1,0,0,0,0];
 		_oldStatsArr = missionNamespace getVariable ["PlayerStatsArr", []];
-		//[_tag, format["Array before Kill: %1", _oldStatsArr], _debug] remoteExec["bia_to_log", 2];
+		//[_tag, format["Array before Kill: %1", _oldStatsArr]] remoteExec["bia_to_log", 2];
 		
 		//find stats array of killer
 		_statsArrIDs = _oldStatsArr apply {_x select 0};
@@ -45,14 +45,14 @@ killedManInfo =
 		//modify stats array of killer
 		if (_arrIdx != -1) then
 		{
-			//[_tag, format["%1: Adding Kill", _killerName], _debug] remoteExec["bia_to_log", 2];
+			//[_tag, format["%1: Adding Kill", _killerName]] remoteExec["bia_to_log", 2];
 			
 			_oldPlayerArr = _oldStatsArr select _arrIdx;
 			_oldPlayerArr params ["_uid", "_oldKills", "_oldDeaths", "_oldPlayerKills", "_oldAttackWins", "_oldDefenseWins"];
 
 			if (_playerKill) then 
 			{
-				[_tag, format["%1: Adding Player Kill", _killerName], _debug] remoteExec["bia_to_log", 2];
+				[_tag, format["%1: Adding Player Kill", _killerName]] remoteExec["bia_to_log", 2];
 				_oldStatsArr set [_arrIdx, [_killerUID, _oldKills, _oldDeaths, _oldPlayerKills + 1, _oldAttackWins, _oldDefenseWins]];
 			} else 
 			{
@@ -62,7 +62,7 @@ killedManInfo =
 		} else
 		{
 			//killer not found, add new array for him
-			[_tag, format["Killer %1 not found in Stats Arr, adding new Entry", _killerName], _debug] remoteExec["bia_to_log", 2];
+			[_tag, format["Killer %1 not found in Stats Arr, adding new Entry", _killerName]] remoteExec["bia_to_log", 2];
 			
 			_oldStatsArr pushBack [_killerUID, 1, 0, 0, 0, 0];
 			missionNamespace setVariable ["PlayerStatsArr", _oldStatsArr, true];

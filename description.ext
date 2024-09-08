@@ -1,7 +1,7 @@
 ﻿//Loading Screen
 loadScreen="BiA.jpg";
-onLoadName = "BiA - CTI";
-onLoadMission = "Enjoy cooperating with burgers";
+onLoadName = "BiA - Guerilla";
+onLoadMission = "";
 author = "Arkani";
 
 //Respawn
@@ -10,7 +10,7 @@ respawndelay = 3;
 respawnButton = 1;
 respawnOnStart = 1;
 respawnDialog = 0;
-respawnTemplates[] = { "MenuInventory", "MenuPosition" };
+// respawnTemplates[] = { "MenuInventory", "MenuPosition" }; // enable for respawn loadouts
 
 //Mission Info
 class Header 
@@ -32,7 +32,7 @@ corpseManagerMode = 1; //all units monitored
 wreckManagerMode = 1; //all vehicles monitored
 minPlayerDistance = 50;
 
-corpseLimit = 5;
+corpseLimit = 5; // 5
 wreckLimit = 1;
 
 corpseRemovalMinTime = 60;

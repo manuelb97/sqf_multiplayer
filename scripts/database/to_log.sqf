@@ -2,10 +2,12 @@
 params [
 "_tag",
 "_text",
-["_debug", true]
+["_print", false]
 ];
 
-if (_debug) then 
+[format["[BiA] [%1]: %2", _tag, _text]] remoteExec ["diag_log", 2];
+
+if (_print) then 
 {
-	[format["[BiA] [%1]: %2", _tag, _text]] remoteExec ["diag_log", 2];
+	[format["[BiA] [%1]: %2", _tag, _text]] remoteExec ["hint", 0];
 };

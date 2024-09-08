@@ -40,7 +40,7 @@ while {true} do
 		} forEach _arsenalsToAdd;
 		
 		missionNamespace setVariable ["ActiveArsenals", _neededArsenals, true];
-		[_arsenalManageTag, format["Newly available Arsenal: %1", _arsenalsToAdd], _debug] spawn bia_to_log;
+		[_arsenalManageTag, format["Newly available Arsenal: %1", _arsenalsToAdd]] spawn bia_to_log;
 	} else
 	{
 		if (count _activeArsenals > count _neededArsenals) then 
@@ -58,7 +58,7 @@ while {true} do
 			} forEach _arsenalsToRemove;
 			
 			missionNamespace setVariable ["ActiveArsenals", _neededArsenals, true];
-			[_arsenalManageTag, format["Removed the following Arsenal: %1", _arsenalsToRemove], _debug] spawn bia_to_log;
+			[_arsenalManageTag, format["Removed the following Arsenal: %1", _arsenalsToRemove]] spawn bia_to_log;
 		};
 	};
 

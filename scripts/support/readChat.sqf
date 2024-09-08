@@ -7,11 +7,18 @@
 addMissionEventHandler ["HandleChatMessage", {
 	params ["_channel", "_owner", "_from", "_text", "_person", "_name", "_strID", "_forcedDisplay", "_isPlayerMessage", "_sentenceType", "_chatMessageType"];
 	
-	_cmdArr = ["AT", "HE", "Smoke", "Flare", "GunRun", "RocketRun", "AC130", "Marker", "Supply", "QRF"]; //"Sniper", "Kit", 
+	// ["read_chat", format["event_arr: %1", [_channel, _owner, _from, _text, _person, _name, _strID, _forcedDisplay, _isPlayerMessage, _sentenceType, _chatMessageType]]] spawn bia_to_log;
+	
+	_cmdArr = [
+		"AT", "HE", "Smoke", "Flare", 
+		"GunRun", "RocketRun", "AC130", 
+		"QRF", "Sniper", 
+		"Marker", "Supply", "Kit"
+	];
 	_signal = "#";
 
 	_tag = "ReadChat";
-	[_tag, format["Chat Msg: %1", _text]] spawn bia_to_log;
+	// [_tag, format["Chat Msg: %1", _text]] spawn bia_to_log;
 
 	if (_signal in _text) then 
 	{
@@ -26,6 +33,9 @@ addMissionEventHandler ["HandleChatMessage", {
 		if (count _chatArr > 0) then 
 		{
 			_chatFunc = _chatArr select 0;
+			_chatArr = [_person] + _chatArr;
+
+			// ["read_chat", format["chat_arr: %1", _chatArr]] spawn bia_to_log;
 			
 			if (_chatFunc in _cmdArr) then
 			{ 

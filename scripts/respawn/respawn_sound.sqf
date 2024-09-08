@@ -13,11 +13,23 @@ if (count _playerStats > 0) then
 
 if (_deaths < 1) then 
 {
-	playMusic selectRandom["round1"];
+	if (str _player != "chris") then 
+	{
+		playMusic selectRandom["round1"];
+	} else 
+	{
+		playMusic selectRandom["yougay"];
+	};
 } else
 {
 	//Add death to stats
 	[_player, true] remoteExec ["bia_add_death", 2];
 
-	playMusic selectRandom["fatality"];
+	if (str _player != "chris") then 
+	{
+		playMusic selectRandom["fatality"];
+	} else 
+	{
+		playMusic selectRandom["whygay","yougay","whogay","makegay"];
+	};
 };

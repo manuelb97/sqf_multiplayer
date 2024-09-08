@@ -33,6 +33,9 @@ bia_closest_obj			= [_p, "closestObj"] call bia_compile_script;
 bia_clear_ground		= [_p, "clearGround"] call bia_compile_script;
 bia_sweep_area			= [_p, "sweepAreaOfObjects"] call bia_compile_script;
 bia_clear_vegetation	= [_p, "clearVegetation"] call bia_compile_script;
+bia_to_num				= [_p, "change_str_to_num"] call bia_compile_script;
+bia_check_input 		= [_p, "check_input"] call bia_compile_script;
+bia_input_msg			=[_p, "check_input_msg"] call bia_compile_script;
 
 //hosting
 _p = "scripts\host\";
@@ -47,8 +50,8 @@ bia_respawn_marker	= [_p, "death_marker"] call bia_compile_script;
 _p = "scripts\equipment\";
 bia_respawn_loadout		= [_p, "respawnLoadout"] call bia_compile_script;
 bia_blank_loadout		= [_p, "blank_loadout"] call bia_compile_script;
-bia_random_loadout		=[_p, "randomThemeLoadout"] call bia_compile_script;
-bia_mag_bullets			=[_p, "getMagBullets"] call bia_compile_script;
+bia_random_loadout		= [_p, "randomThemeLoadout"] call bia_compile_script;
+bia_mag_bullets			= [_p, "getMagBullets"] call bia_compile_script;
 
 //insertion 
 _p = "scripts\insertion\";
@@ -60,23 +63,52 @@ bia_equip_inser_veh				= [_p, "equip_insertion_car"] call bia_compile_script;
 
 //Support 
 _p = "scripts\support\";
-bia_support_qrf			= [_p, "qrf_convoy"] call bia_compile_script;
-bia_drop_projectile		= [_p, "dropProjectile"] call bia_compile_script;
+bia_chat_execute		= [_p, "executeChatFunc"] call bia_compile_script;
+bia_supp_map			= [_p, "mapSupport"] call bia_compile_script;
+
+//Artillery supports 
+_p = "scripts\support\artillery\";
+bia_drop_projectile	= [_p, "dropProjectile"] call bia_compile_script;
+bia_at_artillery	= [_p, "at_precision_artillery"] call bia_compile_script;
+bia_he_artillery	= [_p, "he_small_barrage"] call bia_compile_script;
+bia_smoke_artillery	= [_p, "smoke_artillery"] call bia_compile_script;
+bia_flare_artillery	= [_p, "flare_artillery"] call bia_compile_script;
+
+//CAS supports
+_p = "scripts\support\cas\";
+bia_gunrun_cas			= [_p, "gunrun_cas"] call bia_compile_script;
+bia_rocketrun_cas		= [_p, "rocketrun_cas"] call bia_compile_script;
+bia_ac130_cas			= [_p, "ac130_cas"] call bia_compile_script;
+bia_ac130_support		= [_p, "ac130Support"] call bia_compile_script;
 bia_cas_variable_weap	= [_p, "zeusCASVariableWeapon"] call bia_compile_script;
 bia_zeus_cas			= [_p, "zeusCAS"] call bia_compile_script;
-bia_ac130_support		= [_p, "ac130Support"] call bia_compile_script;
-bia_rearm_vehicle		= [_p, "rearmVehicle"] call bia_compile_script;
-bia_chat_execute		= [_p, "executeChatFunc"] call bia_compile_script;
 bia_supp_variable_cas	= [_p, "zeusCASVariableWeapon"] call bia_compile_script;
+
+//Infantry support
+_p = "scripts\support\infantry_support\";
+bia_sniper_assassination	= [_p, "sniper_assassination"] call bia_compile_script;
+bia_qrf_support				= [_p, "qrf_support"] call bia_compile_script;
+bia_support_qrf				= [_p, "qrf_convoy"] call bia_compile_script;
+bia_supp_infantry_team		= [_p, "infantryTeam"] call bia_compile_script;
+
+//heli support
+_p = "scripts\support\heli\";
+bia_rearm_vehicle		= [_p, "rearmVehicle"] call bia_compile_script;
+bia_supp_spawn_heli		= [_p, "heliRequest"] call bia_compile_script;
+bia_supp_veh_loadout	= [_p, "vehicleLoadout"] call bia_compile_script;
+
+//uav support 
+_p = "scripts\support\uav\";
 bia_supp_spawn_drone	= [_p, "spawnDroneSupport"] call bia_compile_script;
 bia_supp_control_drone	= [_p, "controlDroneGunner"] call bia_compile_script;
 bia_supp_drone_strike	= [_p, "droneStrike"] call bia_compile_script;
 bia_supp_drone_marker	= [_p, "droneMarker"] call bia_compile_script;
-bia_supp_map			= [_p, "mapSupport"] call bia_compile_script;
-bia_supp_infantry_team	= [_p, "infantryTeam"] call bia_compile_script;
-bia_supp_spawn_heli		= [_p, "heliRequest"] call bia_compile_script;
-bia_supp_veh_loadout	= [_p, "vehicleLoadout"] call bia_compile_script;
-bia_supp_rearm_vehicle	= [_p, "vehicleLoadout"] call bia_compile_script;
+
+//misc support 
+_p = "scripts\support\misc\";
+bia_create_tmp_marker	= [_p, "create_marker"] call bia_compile_script;
+bia_supply_box			= [_p, "supply_box"] call bia_compile_script;
+bia_change_kit			= [_p, "change_kit"] call bia_compile_script;
 
 //Enemies
 _p = "scripts\enemies\";
@@ -96,6 +128,7 @@ bia_get_tier_cat		= [_p, "getTierCategory"] call bia_compile_script;
 bia_guard_positions		= [_p, "getGuardPositions"] call bia_compile_script;
 bia_compound_guards		= [_p, "compoundGuards"] call bia_compile_script;
 bia_compound_patrols	= [_p, "compoundPatrols"] call bia_compile_script;
+bia_despawn_units		= [_p, "despawnUnits"] call bia_compile_script;
 
 //House Raids
 _p = "scripts\missions\house_raids\";
@@ -134,6 +167,23 @@ bia_sector_attacks_local_init		= [_p, "initPlayerLocalCode"] call bia_compile_sc
 bia_sector_attacks_arsenal			= [_p, "arsenal"] call bia_compile_script;
 bia_sector_attacks_resp_load		= [_p, "respawnLoadout"] call bia_compile_script;
 
+//training 
+_p = "scripts\missions\training\";
+bia_training_center				= [_p, "setDefenceCenter"] call bia_compile_script;
+bia_training_attacker_start		= [_p, "setAttackerOrigin"] call bia_compile_script;
+bia_training_max_enemies		= [_p, "setMaxEnemies"] call bia_compile_script;
+bia_training_local_init			= [_p, "initPlayerLocalCode"] call bia_compile_script;
+bia_training_resp_load			= [_p, "respawnLoadout"] call bia_compile_script;
+bia_training_mission_state		= [_p, "setMissionState"] call bia_compile_script;
+bia_training_kill_goal			= [_p, "setKillGoal"] call bia_compile_script;
+bia_training_get_total_kills	= [_p, "getTotalKills"] call bia_compile_script;
+bia_training_set_faction		= [_p, "setFaction"] call bia_compile_script;
+bia_training_spawn_attackers	= [_p, "spawnAttackers"] call bia_compile_script;
+bia_training_get_initial_kills	= [_p, "getInitialKills"] call bia_compile_script;
+
+//progression rpg
+_p = "scripts\missions\liberation_rpg\";
+bia_rpg_local_init	= [_p, "initPlayerLocalCode"] call bia_compile_script;
 
 
 /*

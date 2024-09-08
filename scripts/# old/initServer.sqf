@@ -7,7 +7,7 @@ resistance setFriend [west, 0];
 //Settings
 _debug = true;
 _tag = "initServer";
-[_tag, "Start", _debug] spawn bia_to_log;
+[_tag, "Start"] spawn bia_to_log;
 
 //FPS 
 if (hasInterface) then 
@@ -16,7 +16,7 @@ if (hasInterface) then
 };
 
 //Determine best host 
-[_debug] execVM "scripts\host\chooseHost.sqf";
+[] execVM "scripts\host\chooseHost.sqf";
 
 //Enemy Skill 
 missionNamespace setVariable ["InfantrySkill", [0.1, 0.15, 0.2, 0.25], true];

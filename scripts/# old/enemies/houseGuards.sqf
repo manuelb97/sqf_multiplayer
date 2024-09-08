@@ -51,7 +51,7 @@ while {true} do
 
 		if (count _farGuards > 0) then 
 		{
-			[_guardsTag, "Deleting far guards", _debug] spawn bia_to_log;
+			[_guardsTag, "Deleting far guards"] spawn bia_to_log;
 
 			{
 				deleteVehicle _x;
@@ -103,7 +103,7 @@ while {true} do
 			//remove buildings which were used during this attack
 			_nearBuildings = _nearBuildings select {!(_x in _populatedBuildings)};
 
-			// [_guardsTag, format["%1 close Buildings outside of sectors found", count _nearBuildings], _debug] spawn bia_to_log;
+			// [_guardsTag, format["%1 close Buildings outside of sectors found", count _nearBuildings]] spawn bia_to_log;
 			
 			//spawn guards
 			if (count _nearBuildings > 0) then
@@ -173,7 +173,7 @@ while {true} do
 						};
 					};
 					
-					// [_guardsTag, format["%1 final house positions found for %2 potential guards", count _finalPositions, _guardsToSpawn], _debug] spawn bia_to_log;
+					// [_guardsTag, format["%1 final house positions found for %2 potential guards", count _finalPositions, _guardsToSpawn]] spawn bia_to_log;
 
 					//Populate selected positions
 					if (count _finalPositions > 0) then 
@@ -192,7 +192,7 @@ while {true} do
 		//Reset so buildings can be used again
 		if (count _populatedBuildings > 0) then 
 		{
-			[_guardsTag, format["Resetting available buildings as no players outside of HQ"], _debug] spawn bia_to_log;
+			[_guardsTag, format["Resetting available buildings as no players outside of HQ"]] spawn bia_to_log;
 			_populatedBuildings = [];
 		};
 
@@ -201,7 +201,7 @@ while {true} do
 
 		if (count _guards > 0) then 
 		{
-			[_guardsTag, format["Deleting all guards as no players outside of HQ"], _debug] spawn bia_to_log;
+			[_guardsTag, format["Deleting all guards as no players outside of HQ"]] spawn bia_to_log;
 
 			{
 				deleteVehicle _x;

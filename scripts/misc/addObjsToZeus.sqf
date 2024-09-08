@@ -7,6 +7,7 @@ while {true} do
 		!("cutter" in (str _x))
 		&& _x != hq_pos
 		&& !("invisible" in (str _x))
+		&& !("helipadlight" in (str _x))
 	};
 
 	{
@@ -21,5 +22,5 @@ while {true} do
 	} forEach allCurators;
 	*/
 
-	uiSleep 20;
+	uiSleep 10;
 };

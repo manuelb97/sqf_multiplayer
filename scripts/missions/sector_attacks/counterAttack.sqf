@@ -92,7 +92,7 @@ _finalVehicles = [];
 	_remainingNumEnemies = _remainingNumEnemies - _seats;
 } forEach _vehicleClasses;
 
-[_tag, format["Tier: %1, Type: %2, Number Vehicles: %3", _tier, _insertionType, count _finalVehicles], _debug] spawn bia_to_log;
+[_tag, format["Tier: %1, Type: %2, Number Vehicles: %3", _tier, _insertionType, count _finalVehicles]] spawn bia_to_log;
 
 //Spawn attack groups
 _fallBackPos = _targetPos getPos [random[800,1000,1200], random 360];
@@ -119,7 +119,7 @@ if (_isHQ) then {_radius = 75;};
 	//spawn bia_spawn_veh_group; //
 } forEach _finalVehicles;
 
-[_tag, "Waiting for units to spawn", _debug] spawn bia_to_log;
+[_tag, "Waiting for units to spawn"] spawn bia_to_log;
 
 //Wait till units spawned 
 while {count(allUnits select {_x getVariable [_varName, false]}) < 1} do 
@@ -148,7 +148,7 @@ _tempMarkerTarget setMarkerSize [2,2];
 	5, 0, 0, 86, "Red"
 ] remoteExec ["bia_spawn_text", 0];
 
-[_tag, "Enemies spawned waiting for outcome", _debug] spawn bia_to_log;
+[_tag, "Enemies spawned waiting for outcome"] spawn bia_to_log;
 
 _capturePossTime = serverTime + 600;
 _countdown = [_capturePossTime, "CounterAttackOngoing", _debug] spawn bia_countdown;
@@ -178,7 +178,7 @@ while {count(allUnits select {_x getVariable [_varName, false] && alive _x}) > 0
 			_clearedPosArr = ["ClearedPosArr",[]] call bia_load_from_profile;
 			_clearedPosArr = _clearedPosArr - [getMarkerPos _marker];
 			["ClearedPosArr", _clearedPosArr] call bia_save_to_profile;
-			[_tag, "Lost one Sector to a Counter Attack", _debug] spawn bia_to_log;
+			[_tag, "Lost one Sector to a Counter Attack"] spawn bia_to_log;
 		};
 	};
 
@@ -202,7 +202,7 @@ while {count(allUnits select {_x getVariable [_varName, false] && alive _x}) > 0
 
 missionNamespace setVariable ["LastCounterAttack", serverTime, true];
 
-[_tag, "Attack finished", _debug] spawn bia_to_log;
+[_tag, "Attack finished"] spawn bia_to_log;
 missionNamespace setVariable ["CounterAttackOngoing", false, true];
 
 {

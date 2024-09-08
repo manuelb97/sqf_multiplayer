@@ -51,7 +51,7 @@ for "_i" from 1 to _itemCount do
 				_backpackCon addItemCargoGlobal [_item, 1];
 			} else 
 			{
-				["AddItem", format["Failed to add: %1 to %2", [_item, _itemCount - _i], _player], _debug] spawn bia_to_log;
+				["AddItem", format["Failed to add: %1 to %2", [_item, _itemCount - _i], _player]] spawn bia_to_log;
 			};
 		};
 	};

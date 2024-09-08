@@ -1,7 +1,6 @@
 //Paras
 params [
-"_locality",
-"_debug"
+"_locality"
 ];
 
 _currFPS = diag_fps;

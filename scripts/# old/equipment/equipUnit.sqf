@@ -72,7 +72,7 @@ _gearArr = [];
 
 	_subArrSelection = _selectArr select _tier;
 	
-	// ["Test", str [_forEachIndex, _subArrSelection], _debug] spawn bia_to_log;
+	// ["Test", str [_forEachIndex, _subArrSelection]] spawn bia_to_log;
 
 	//restrict weapon selection to role weapons
 	if (_selectArr isEqualTo _weapons) then 
@@ -94,7 +94,7 @@ _gearArr = [];
 		_gearArr pushBack _subArrSelection;
 	};
 	
-	// ["Test", str [_forEachIndex, _subArrSelection], _debug] spawn bia_to_log;
+	// ["Test", str [_forEachIndex, _subArrSelection]] spawn bia_to_log;
 } forEach 
 [
 	_uniforms, _vests, _backpacks, _headgear, _facegear, _binos, _nvgs, _launchers, _weapons,
@@ -241,7 +241,7 @@ _unit addItemToVest (selectRandom _tierPlates);
 
 
 
-// ["Equipment", _weapClass, _debug] spawn bia_to_log;
+// ["Equipment", _weapClass] spawn bia_to_log;
 // hint _weapClass;
 
 /*

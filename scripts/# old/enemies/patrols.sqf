@@ -16,7 +16,7 @@ private [
 ];
 
 _patrolTag = "PatrolLoop";
-[_patrolTag, "Patrol Script started", _debug] spawn bia_to_log;
+[_patrolTag, "Patrol Script started"] spawn bia_to_log;
 
 _initialMax = _maxEnemies;
 _grpSizes = [1, 2, 3, 4, 5];
@@ -59,7 +59,7 @@ while {true} do
 		
 		if (count _deleteOpfor > 0) then 
 		{
-			[_patrolTag, "Deleting far away Patrols", _debug] spawn bia_to_log;
+			[_patrolTag, "Deleting far away Patrols"] spawn bia_to_log;
 			
 			{
 				deleteVehicle _x;
@@ -84,7 +84,7 @@ while {true} do
 		
 		if (!isNil "_newPlayerPos" && _playerDistance > 50 && count _opforPatrolGroups > 0) then 
 		{
-			// [_patrolTag, "Giving new WPs to existing Patrols", _debug] spawn bia_to_log;
+			// [_patrolTag, "Giving new WPs to existing Patrols"] spawn bia_to_log;
 			
 			{
 				for "_i" from (count waypoints _x - 1) to 0 step -1 do 
@@ -112,7 +112,7 @@ while {true} do
 			&& !(missionNamespace getVariable ["ReduceEnemies", false])
 		) then 
 		{
-			// [_patrolTag, "Trying to spawn new Patrols", _debug] spawn bia_to_log;
+			// [_patrolTag, "Trying to spawn new Patrols"] spawn bia_to_log;
 			
 			_enemiesToSpawn = selectMin[_maxEnemies - _patrolEnemyCount, _maxTotal - (count _enemyUnits)];
 			_grpSizes = [];
@@ -157,7 +157,7 @@ while {true} do
 						] remoteExec ["bia_spawn_group", missionNamespace getVariable ["BiA_Host", 2]]; //spawn bia_spawn_group; //
 						// [["Patrol", _size, _spawnPos, _targetPos, _wpPosArr, _infantry, _patrolVariable, 50, _debug]] spawn bia_spawn_group;
 						
-						[_patrolTag, "Spawning new Patrols", _debug] spawn bia_to_log;
+						[_patrolTag, "Spawning new Patrols"] spawn bia_to_log;
 			
 						_nextSpawnTime = serverTime + _delay; //random [_delay / 2, _delay, _delay + (_delay / 2)];
 					};
@@ -168,19 +168,19 @@ while {true} do
 
 			if (_patrolEnemyCount >= _maxEnemies && serverTime > (_lastInfoDisplayed + _infoBreak)) then 
 			{
-				[_patrolTag, "Max amount of Patrols reached", _debug] spawn bia_to_log;
+				[_patrolTag, "Max amount of Patrols reached"] spawn bia_to_log;
 				_lastInfoDisplayed = serverTime;
 			};
 
 			if (count _enemyUnits >= _maxTotal && serverTime > (_lastInfoDisplayed + _infoBreak)) then 
 			{
-				[_patrolTag, "Max amount of active Enemies reached", _debug] spawn bia_to_log;
+				[_patrolTag, "Max amount of active Enemies reached"] spawn bia_to_log;
 				_lastInfoDisplayed = serverTime;
 			};
 
 			if (missionNamespace getVariable ["SideMissionActive", false] && serverTime > (_lastInfoDisplayed + _infoBreak)) then 
 			{
-				[_patrolTag, "Patrols deactivated due to active SideMission", _debug] spawn bia_to_log;
+				[_patrolTag, "Patrols deactivated due to active SideMission"] spawn bia_to_log;
 				_lastInfoDisplayed = serverTime;
 			};
 		};
@@ -194,7 +194,7 @@ while {true} do
 		if (serverTime > (_lastInfoDisplayed + _infoBreak) && _lastPlayerCount != count _playerArr) then 
 		{
 			_lastPlayerCount = count _playerArr;
-			[_patrolTag, "No players outside of HQ", _debug] spawn bia_to_log;
+			[_patrolTag, "No players outside of HQ"] spawn bia_to_log;
 			_lastInfoDisplayed = serverTime;
 		};
 	};

@@ -32,7 +32,7 @@ while {true} do
 		&& (_currTotalEnemies + 20) <= _maxTotalEnemies
 	) then 
 	{
-		[_tag, "Starting Counter Attack", _debug] spawn bia_to_log;
+		[_tag, "Starting Counter Attack"] spawn bia_to_log;
 
 		_lastCounterAttack = missionNamespace setVariable ["LastCounterAttack", serverTime, true];
 
@@ -47,7 +47,7 @@ while {true} do
 		// _counterAttackMarker = "";
 		// if (count _clearedMarkers < 1 || _attackHQChance > _hqChance) then 
 		// {
-		// 	[_tag, "Counter Attack targets HQ", _debug] spawn bia_to_log;
+		// 	[_tag, "Counter Attack targets HQ"] spawn bia_to_log;
 
 		// 	_counterAttackMarker = "hq_marker";
 		// 	_isHQ = true;
