@@ -1,0 +1,9 @@
+class system like bfbc2
+    set equipment class when loadout selected
+    individual classes option to drop
+    ammo box
+    medic box
+    step wise refill of inventory to class defaults
+    perk selection?
+    more nades? etc?
+

@@ -1,0 +1,39 @@
+Guerilla warfare mission
+	- currency kills (1 kill = 1 coin)
+	- standard equipment
+		- AK74 or worse?
+	- buyable equipment against currency 
+		- dmrs / sniper rifles with better scopes 
+		- mgs ? (or standard equipment)
+		- buy equipment via ace action with computer 
+			- then equipment added to supply box 
+			- another supply box with infinite stuff (only super basic)
+	- what about tracer mags etc 
+		- even useful if no scopes? 
+		- maybe standard in scoped weapons?
+	- equipment of enemies can be stolen and is saved in the base
+	- currency is group shared 
+	- standard vehicle quad 
+	-unlockable vehicles with weapons
+	- mortar strikes etc via payment unlockable 
+		- ace self interaction or chat cmd 
+	- no better equipment unlock 
+		- shit equipment all the time 
+	- enemy faction like us army 
+	- enemies populate everything
+		- all towns / military installations
+		- in military installations / towns something to blow up
+			- if successful many coins as reward 
+				- sneaking in / rushing it necessary otherwise impossible
+	- mark enemy routes 
+		- difficult to implement 
+			- maybe only a percentage of spawned enemies 
+				- so there is still enough insecurity about it
+		- intelligence of local non fighters
+		- part of standard equipment mines or charges with simple detonator
+	- random patrols around the area
+		- not just around play (not like before)
+		- if player close to area of interest than patrols around that 
+		- patrols on streets
+		- no constant patrols around player
+	- think further 

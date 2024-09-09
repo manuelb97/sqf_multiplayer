@@ -1,0 +1,13 @@
+
+training defence mission
+    maybe different scenarios
+        cqb death match in city 
+        door gunner in heli 
+        sniper 
+    maybe different insertions methods
+        mere infantry spawn 
+        in vehicle 
+            armed, unarmed
+        in helicopter
+    supports?
+    friendly units?

@@ -1,0 +1,52 @@
+progression system
+	levels for whole group
+		kills give xp (depending on distance?)
+			skill / faction of killed enemy gives additions 2?
+			skill based on mil rank of enemy?
+			when officer near raise skill of surrounding enemies?
+			heavy mg gunngers / vehicles extra xp?
+				new enemy behaviour 
+					if enemy in vehicle turret
+						upon going unconscious
+							leave turret completely 
+		is displayed in hq 
+			with level and progress to nxt level 
+		implement civilians
+			look similar to enemies but unarmed 
+			this and other actions (e.g. team kills)
+				lead to subtraction of xp
+			deaths lead to subtraction of xp 
+				depending on amount of equipment wasted?
+                    calc equipment value on death?
+                        or better on leave HQ? 
+                        should not punish for effectively used equipment?
+				set on hq leaving as otherwise gets dropped / used
+				every item has set value?
+					need to define all anyway for progression 
+					incentivise minimalistic use of equipment 
+						maybe make load a bigger factor for stamina / performance to further make this a thing
+	mission type 
+        only 3 zones
+            remaining terrain occupied by bandits
+            bandits infinite faction 
+                little exp 
+		maybe zones with set amount of enemies
+			e.g. zone green (milita) 20k man strong
+				next to marker info about zone 
+					or additional marker below with text?
+						bug of not being able to update marker?
+			enemies spawn around player when boots on the ground 
+				preference for structures, roads, buildings etc
+					enemies spawn in as combat behaviour blue
+				spawn far enough away from player
+				avoid surrounds to make situations less messy
+					spawn from direction of center / hq of zone
+						maybe bases in zone, select closes base 
+							enemies spawn from that direction 
+						bases can be liberated
+							amount of reinforcements for base under attack 
+								depends on total number of enemies left in zone + close bases 
+								should be impossible to liberate unless zone weakend
+            quadrants
+                once enemies have knowledge of players (info = 4), sector goes into combat mode 
+                    enemies in this sector are in aware mode

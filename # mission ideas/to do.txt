@@ -1,0 +1,71 @@
+
+
+database
+    need better database for each mission 
+		for liberation_rpg: bases cleared, amount of enemies reduced per zone, xp lost due to death with equipment x
+    keep main event handler for kills, deaths 
+    implement separate systems for mission sub types 
+        e.g. pvp attacker / defender wins, buildings cleared etc
+
+check advanced ballistics code 
+    write function to provide exact shooting solution 
+        calc own solution, compare -> better feedback on what underestimated
+
+check input for each function to be sure errors dont occur because of input 
+    [_varArr, _typeArr] call bia_check_input;
+
+    need to be able to specify variable type present in array variables 
+
+    [[_dist, _dir, _rounds, _radius]] call bia_to_num params ["_dist", "_dir", "_rounds", "_radius"];
+    _valid = [_parent, _player, _pos, _rounds, _radius] isEqualTypeParams ["", objNull, [], 0, 0];
+    if !(_valid) exitWith
+    {
+        ["scripts\support\artillery\he_small_barrage.sqf", _parent, [_parent, _pos, _rounds, _radius]] spawn bia_input_msg;
+    };
+
+revive side missions
+    overall 
+        smaller scale than before 
+        enemy proximity patrols higher pressure, less on site 
+    push through
+        infinite proximity enemy spawn
+        goal reach end zone from start zone 
+    old side missions 
+        destroy enemey supplies etc 
+
+implement global variable to adjust all supports & equipment
+    kits
+        check loadouts from previous missions 
+    supports 
+        rebel
+            mortar 80mm HE, Smoke
+            rocket strike (not vertical but from an angle, mb use proper russian truck for it)
+        army 
+            arty 120mm, vertical single rocket 
+            bombs jdam
+            cas gun run 
+            heli loiter cas
+        sf 
+            qrf
+            laser guided rocket strike 
+            ac130 
+            sniper 
+
+supports 
+    play with delay + cooldowns
+    different ways to call supports? 
+        chat
+        map
+        lasers?
+    at supports like sniper support?
+        spawn javelin missile to take vehicle out?
+            check for vehicles in designated area
+            if found execute script
+
+re test ai mods 
+    updates to soldier fsm
+    currently asr ai3?
+
+check SIE interest in A3 
+    check for old vids
+    record new vids?
